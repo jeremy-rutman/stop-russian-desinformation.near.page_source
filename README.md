@@ -1,4 +1,9 @@
 # stop-russian-desinformation.near.page_source
 source for https://stop-russian-desinformation.near.page/
 
-site was attacked by the time i though to save it so I copied code from developer-tools (save as goes back to server for source apparently.) 
+that site was attacked and is by now offline. 
+A spruced up verson can be found still working here https://norussian.xyz/  
+
+To use:
+Download the html
+In your browser, File->Open the file you just saved. ddos ensues, use at your own discrection.
